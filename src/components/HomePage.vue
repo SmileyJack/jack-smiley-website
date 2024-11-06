@@ -1,4 +1,8 @@
 <template>
+
+  <div>
+    <img src="headshotSrc" alt="Pictured: A handsome Jack Smiley" class="headshot"/>
+  </div>
   <div class="home-page">
     <h1>{{ message }}</h1>
     <div class="resume-cards">
@@ -14,11 +18,13 @@
 <script lang="ts">
 
 import { defineComponent, reactive, ref } from 'vue';
+import headshot from '@/assets/headshot.png';
 
 export default defineComponent({
   name: 'HomePage',
-  
+
   setup() {
+    const headshotSrc = headshot
     const message = ref("My name is Jack Smiley :)")
 
     const resumeItems = reactive([
@@ -28,6 +34,7 @@ export default defineComponent({
     ]);
 
     return {
+      headshotSrc,
       message,
       resumeItems
     };
