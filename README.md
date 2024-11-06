@@ -1,2 +1,2 @@
-# resume-website
+# jack-smiley-website
 quick personal website
