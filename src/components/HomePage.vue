@@ -27,7 +27,7 @@
       </div>
     </div>
   </div>
-  <div class="home-page">
+  <div>
     <ResumeItems></ResumeItems>
   </div>
 </div>
@@ -47,7 +47,7 @@ export default defineComponent({
   },
   
   setup() {
-    const headshotSrc = require('@/assets/headshot.png')
+    const headshotSrc = require('../../public/headshot.png')
 
     return {
       headshotSrc,
@@ -125,12 +125,7 @@ export default defineComponent({
   margin: 0;
 }
 
-.home-page {
-  text-align: center;
-  width: 100%;
-}
-
-@media (max-width: 1024px) {
+@media (max-width: 900px) {
   .container {
     flex-wrap: wrap;
   }
@@ -145,7 +140,7 @@ export default defineComponent({
 
   .text-container {
     width: 90%; 
-    max-width: 100%; 
+    max-width: 90%; 
     margin: 0; 
     align-items: center; 
     text-align: center; 
