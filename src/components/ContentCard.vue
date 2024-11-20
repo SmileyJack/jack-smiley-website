@@ -1,10 +1,6 @@
 <template>
     <div class="main-card">
-        <div class="card" v-for="item in resumeItems" :key="item.id">
-            <h2 >{{ item.company }}</h2>
-            <h3>{{ item.title }}</h3>
-            <p class="details">{{ item.dates}}</p>
-        </div>
+        
     </div>
 </template>
 
@@ -19,6 +15,9 @@ export default defineComponent({
         items: {
             type: String 
         }
+    },
+    setup(){
+        return ''
     }
 
 })
