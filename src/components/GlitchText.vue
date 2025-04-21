@@ -33,7 +33,7 @@
         glitchInterval = window.setInterval(() => {
           displayText.value = props.text
             .split('')
-            .map(char => (char !== ' ' ? getRandomChar() : char))
+            .map((char: string) => (char !== ' ' ? getRandomChar() : char))
             .join('');
         }, 50);
       };
