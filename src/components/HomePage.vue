@@ -52,7 +52,7 @@ export default defineComponent({
   },
   
   setup() {
-    const headshotSrc = require('../../public/headshot.png')
+    const headshotSrc = '/headshot.png'
 
     return {
       headshotSrc,

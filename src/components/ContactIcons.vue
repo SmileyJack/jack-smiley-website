@@ -1,16 +1,16 @@
 <template>
    <div :class="['flex', 'justify-start', screen === 'phone' ? 'mt-2' : 'wordPadder']">
       <a href="your_resume_link_here" class="contactBox" target="_blank">
-        <img src="icons/resume.png" alt="Resume" />
+        <img src="/icons/resume.png" alt="Resume" />
       </a>
       <a href="https://www.linkedin.com/in/jack-b-smiley/" class="contactBox" target="_blank">
-        <img src="icons/linkedin.png" alt="LinkedIn" />
+        <img src="/icons/linkedin.png" alt="LinkedIn" />
       </a>
       <a href="https://github.com/SmileyJack" class="contactBox" target="_blank">
-        <img src="icons/github.png" alt="GitHub" />
+        <img src="/icons/github.png" alt="GitHub" />
       </a>
       <a href="mailto:jackbsmiley@gmail.com?subject=&body=" class="contactBox" target="_blank">
-        <img src="icons/email.png" alt="Email" />
+        <img src="/icons/email.png" alt="Email" />
       </a>
     </div>
   </template>
