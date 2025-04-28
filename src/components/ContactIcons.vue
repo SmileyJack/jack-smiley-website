@@ -48,24 +48,36 @@
     justify-content: center;
     align-items: center;
     transition: transform 0.2s ease;
+
+    &:hover {
+      transform: scale(1.1);
+      cursor: pointer;
+    }
+
+    img {
+    height: 70%;
+    }
+
+    .sm {
+        height: 2.65vw;
+    }
+
+    .md {
+        height: 3.5vw;
+    }
+
+    .lg {
+        height: 4vw;
+    }
   }
 
   .contactContainer {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    left: clamp(0.5vw)
   }
-  
-  .contactBox img {
-    height: 70%;
-    filter: invert(0%) sepia(8%) saturate(3616%) hue-rotate(37deg) brightness(100%) contrast(76%);
-  }
-  
-  .contactBox:hover {
-    transform: scale(1.08);
-    cursor: pointer;
-  }
+
+
   
   @media (max-width: 700px) {
     .contactBox {
@@ -73,10 +85,23 @@
       height: 9vw;
       border-radius: 5px;
       margin-right: 1vw;
-    }
-  
-    .contactBox img {
-      height: 70%;
+
+      &:hover {
+            transform: scale(1.1);
+            cursor: pointer;
+        }
+
+        .sm {
+            height: 5vw;
+        }
+
+        .md {
+            height: 6.5vw;
+        }
+
+        .lg {
+            height: 7.5vw;
+        }
     }
   }
   </style>
