@@ -1,7 +1,6 @@
 <template>
-  <div class="contactContainer">
-   <div :class="['flex', 'justify-start', screen === 'phone' ? 'mt-2' : 'wordPadder']">
-      <a href="your_resume_link_here" class="contactBox" target="_blank">
+    <div class="contactContainer">
+      <a href="https://drive.google.com/file/d/1bHy2zqcYWDa5ZG_cUxwl0vBsYXn8of-0/view?usp=sharing" class="contactBox" target="_blank">
         <img src="/icons/resume.png" alt="Resume" />
       </a>
       <a href="https://www.linkedin.com/in/jack-b-smiley/" class="contactBox" target="_blank">
@@ -14,7 +13,6 @@
         <img src="/icons/email.png" alt="Email" />
       </a>
     </div>
-  </div>
   </template>
   
   <script lang="ts">
@@ -39,14 +37,11 @@
   </script>
   
   <style scoped>
-  .wordPadder {
-    padding-top: 1.5vw;
-  }
   
   .contactBox {
     width: 4vw;
     height: 4vw;
-    background: purple;
+    background: #A98CFF;
     border-radius: 0.5vw;
     margin-right: 0.5vw;
     display: flex;
@@ -58,11 +53,8 @@
   .contactContainer {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: flex-start;
-    width: 100%;
-    overflow-x: auto;
+    flex-wrap: wrap;
+    left: clamp(0.5vw)
   }
   
   .contactBox img {
