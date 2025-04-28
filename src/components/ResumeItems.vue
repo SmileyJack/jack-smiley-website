@@ -1,32 +1,24 @@
 <template>
-    <div class="container">
-        <div class="resume-cards">
-            <ContentCard items=resumeItems></ContentCard>
-        </div>
+    <div class="card-grid">
+      <ContentCard v-for="item in experienceInfo" :key="item.title" :item="item" />
     </div>
-</template>
+  </template>
 
 <script lang="ts">
 
-import { reactive, defineComponent } from 'vue';
-// import ContentCard from './ContentCard.vue';
+import { defineComponent } from 'vue';
+import ContentCard from './ContentCard.vue';
+import { experienceInfo } from '@/utils/experienceInfo';
 
 export default defineComponent({
     name: 'ResumeItems',
     components: {
-
+        ContentCard,
     },
 
     setup() {
-        const resumeItems = reactive([
-            { company: 'NIMBUS Labs', title: 'Undergraduate Research Assistant', dates: 'Feb. 2023 - May. 2023'},
-            { company: 'Hudl', title: 'Software Engineering Intern', dates: 'May. 2023 - Aug. 2023 & May. 2024 - Aug. 2024'},
-            { company: 'Scoular', title: 'IT Analytics Intern', dates: 'May. 2022 - Aug. 2022'},
-            { company: 'UNL School of Computing', title: 'SWE III Teaching Assistant', dates: 'Aug. 2024 - Dec. 2024'}
-        ]);
-
         return {
-            resumeItems
+            experienceInfo
         }
     },
 })
@@ -34,5 +26,16 @@ export default defineComponent({
 </script>
 
 <style scoped>
+
+.card-grid {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(300px, 1fr);
+  gap: 2rem;
+  padding: 2rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory; 
+}
+
 
 </style>

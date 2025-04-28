@@ -12,20 +12,21 @@
         <p><strong>Location:</strong> {{ item.location }}</p>
         <p><strong>Time:</strong> {{ item.time }}</p>
         <p><strong>Skills:</strong> {{ item.skills || 'N/A' }}</p>
-        <a :href="item.link" target="_blank">Learn More</a>
+        <a :href="item.link" target="_blank"></a>
         <button @click="closeModal">Close</button>
       </div>
     </div>
   </template>
   
   <script lang="ts">
-  import { defineComponent, ref } from 'vue';
-  
+  import { defineComponent, PropType, ref } from 'vue';
+  import type { ExperienceItem } from '@/utils/experienceInfo';
+
   export default defineComponent({
     name: 'ContentCard',
     props: {
       item: {
-        type: Object,
+        type: Object as PropType<ExperienceItem>,
         required: true
       }
     },
@@ -79,11 +80,10 @@
   }
   
   .modal-content {
-    background: #fff;
+    background: #A98CFF;
     padding: 24px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    max-width: 500px;
     width: 100%;
   }
   

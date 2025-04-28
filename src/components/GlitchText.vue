@@ -11,17 +11,17 @@
   </template>
   
   <script lang="ts">
-  import { defineComponent, ref, PropType } from 'vue';
+  import { defineComponent, ref } from 'vue';
   
   export default defineComponent({
     name: 'GlitchText',
     props: {
       text: {
-        type: String as PropType<string>,
+        type: String,
         required: true
       },
       color: {
-        type: String as PropType<string>,
+        type: String,
         default: 'white'
       },    
     },
@@ -36,6 +36,9 @@
             .map((char: string) => (char !== ' ' ? getRandomChar() : char))
             .join('');
         }, 50);
+        setTimeout(() => {
+          stopGlitch()
+        }, 500)
       };
   
       const stopGlitch = () => {

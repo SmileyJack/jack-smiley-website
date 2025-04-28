@@ -28,6 +28,9 @@
     </div>
   </div>
   <div>
+    <ContactIcons></ContactIcons>
+  </div>
+  <div>
     <ResumeItems></ResumeItems>
   </div>
 </div>
@@ -38,12 +41,14 @@
 import { defineComponent } from 'vue';
 import ResumeItems from './ResumeItems.vue';
 import GlitchText from './GlitchText.vue';
+import ContactIcons from './ContactIcons.vue';
 
 export default defineComponent({
   name: 'HomePage',
   components: {
     ResumeItems,
-    GlitchText
+    GlitchText,
+    ContactIcons,
   },
   
   setup() {
@@ -58,37 +63,40 @@ export default defineComponent({
 
 <style scoped>
 
-.container {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  margin-bottom: 5%;
-  width: 100%;
-}
-
-.backdrop {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  width: 400px;
-  height: 300px; 
-  margin-right: 5%; 
-  margin-top: 10%; 
-  background-color: #A98CFF;
-  border-radius: 10px;
-  position: relative;
-  order: 2; 
-}
-
 .main-container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: 5%;
+  padding-top: clamp(4rem, 8vh, 6rem);
+}
+
+.backdrop {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background-color: #A98CFF;
+  border-radius: 10px;
+  position: relative;
+  aspect-ratio: 4 / 3;
+  width: clamp(200px, 30vw, 400px);
+  margin-top: clamp(8rem, 10vh, 14rem);
+  margin-bottom: clamp(2rem, 5vh, 4rem);
+  margin-left: auto;
+  margin-right: auto;
+  order: 2;
+}
+
 .headshot {
-  width: 90%; 
+  width: clamp(150px, 30vw, 300px);
   height: auto;
   position: absolute;
   bottom: 0;
@@ -99,88 +107,65 @@ export default defineComponent({
   flex-direction: column;
   margin-top: 10%;
   margin-left: 5%;
-  min-width: 20%; 
-  max-width: 40%; 
+  min-width: 20%;
+  max-width: 45%;
   order: 1;
+  text-align: left;
 }
 
 .hello {
-  font-size: 5rem; 
+  font-size: clamp(2rem, 6vw, 5rem);
   font-weight: bolder;
-  text-align: left;
   margin: 0;
 }
 
 .name {
-  font-size: 3rem; 
+  font-size: clamp(1.5rem, 4vw, 3rem);
   font-weight: bold;
-  text-align: left;
   margin: 0;
 }
 
 .blurb {
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 3vw, 2rem);
   font-weight: bold;
-  text-align: left;
   margin: 0;
 }
 
 @media (max-width: 900px) {
-  .container {
-    flex-wrap: wrap;
-  }
-
   .backdrop {
-    width: 80%; 
-    height: auto;
-    padding-top: 80%;
-    margin: 0 auto 2rem;
-    order: 1;
+    order: 2;
   }
 
   .text-container {
-    width: 90%; 
-    max-width: 90%; 
-    margin: 0; 
-    align-items: center; 
-    text-align: center; 
-    order: 2; 
+    order: 1;
   }
 }
-
 @media (max-width: 768px) {
+
+  .backdrop {
+    order: 1;
+    margin-top: clamp(4rem, 10vh, 8rem);
+    margin-bottom: clamp(2rem, 5vh, 4rem);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .text-container {
+    order: 2;
+  }
+
   .container {
     flex-direction: column;
-    align-items: center; 
-  }
-
-  .backdrop {
-    width: 80%; 
-    height: auto;
-    padding-top: 80%;
-    margin: 0 auto 2rem;
-    order: 1;
+    align-items: center;
   }
 
   .text-container {
-    width: 90%; 
-    max-width: 100%; 
-    margin: 0; 
-    align-items: center; 
-    text-align: center; 
-    order: 2; 
-  }
-
-  .hello {
-    font-size: 4rem; 
-  }
-
-  .name {
-    font-size: 2.5rem; 
-  }
-
-  .blurb {
-    font-size: 1.25rem;
+    width: 90%;
+    max-width: 90%;
+    margin: 0;
+    align-items: center;
+    text-align: center;
   }
 }
+
 </style>
