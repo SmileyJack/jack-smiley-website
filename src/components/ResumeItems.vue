@@ -2,7 +2,7 @@
     <div class="card-grid">
       <ContentCard v-for="item in experienceInfo" :key="item.title" :item="item" />
     </div>
-  </template>
+</template>
 
 <script lang="ts">
 

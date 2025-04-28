@@ -1,4 +1,5 @@
 <template>
+  <div class="contactContainer">
    <div :class="['flex', 'justify-start', screen === 'phone' ? 'mt-2' : 'wordPadder']">
       <a href="your_resume_link_here" class="contactBox" target="_blank">
         <img src="/icons/resume.png" alt="Resume" />
@@ -9,10 +10,11 @@
       <a href="https://github.com/SmileyJack" class="contactBox" target="_blank">
         <img src="/icons/github.png" alt="GitHub" />
       </a>
-      <a href="mailto:jackbsmiley@gmail.com?subject=&body=" class="contactBox" target="_blank">
+      <a href="mailto:jackbsmiley@gmail.com?subject=&body=" class="contactBox">
         <img src="/icons/email.png" alt="Email" />
       </a>
     </div>
+  </div>
   </template>
   
   <script lang="ts">
@@ -51,6 +53,16 @@
     justify-content: center;
     align-items: center;
     transition: transform 0.2s ease;
+  }
+
+  .contactContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    overflow-x: auto;
   }
   
   .contactBox img {
