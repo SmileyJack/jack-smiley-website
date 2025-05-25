@@ -27,7 +27,7 @@
       </div>
     </div>
   </div>
-  <div>
+  <div class="contact-container">
     <ContactIcons></ContactIcons>
   </div>
   <div>
@@ -77,6 +77,13 @@ export default defineComponent({
   width: 100%;
   margin-bottom: 5%;
   padding-top: clamp(4rem, 8vh, 6rem);
+}
+
+.contact-container {
+   width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 10%
 }
 
 .backdrop {
