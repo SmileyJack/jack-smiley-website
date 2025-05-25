@@ -52,18 +52,25 @@
   
   <style>
   .main-card {
+    width: 15vw;
+    height: 5vw;
+    background: #A98CFF;
+    border-radius: 0.5vw;
+    margin-right: 0.5vw;
     display: flex;
-    flex-direction: column;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 16px;
-    margin: 8px;
-    cursor: pointer;
-    transition: box-shadow 0.2s ease-in-out;
-  }
-  
-  .main-card:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: scale(1.1);
+      cursor: pointer;
+    }
+
+    img {
+    height: 70%;
+    }
+    
   }
   
   .modal-overlay {

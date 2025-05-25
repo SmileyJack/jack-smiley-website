@@ -67,6 +67,8 @@ export default defineComponent({
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 .container {
@@ -75,15 +77,15 @@ export default defineComponent({
   align-items: flex-start;
   flex-wrap: wrap;
   width: 100%;
-  margin-bottom: 5%;
   padding-top: clamp(4rem, 8vh, 6rem);
 }
 
 .contact-container {
-   width: 100%;
+  width: 100%;
   display: flex;
   justify-content: flex-start;
-  margin-left: 10%
+  margin-left: 10%;
+  margin-bottom: 5%;
 }
 
 .backdrop {
@@ -94,7 +96,7 @@ export default defineComponent({
   border-radius: 10px;
   position: relative;
   aspect-ratio: 4 / 3;
-  width: clamp(200px, 30vw, 400px);
+  width: clamp(150px, 30vw, 350px);
   margin-top: clamp(8rem, 10vh, 14rem);
   margin-bottom: clamp(2rem, 5vh, 4rem);
   margin-left: auto;
@@ -103,16 +105,17 @@ export default defineComponent({
 }
 
 .headshot {
-  width: clamp(150px, 30vw, 300px);
+  width: 100%;
   height: auto;
   position: absolute;
+  margin-left: 30px;
   bottom: 0;
 }
 
 .text-container {
   display: flex;
   flex-direction: column;
-  margin-top: 10%;
+  margin-top: 5%;
   margin-left: 5%;
   min-width: 20%;
   max-width: 45%;
