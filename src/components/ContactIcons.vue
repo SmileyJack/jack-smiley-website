@@ -1,108 +1,56 @@
 <template>
-    <div class="contactContainer">
-      <a href="https://drive.google.com/file/d/1bHy2zqcYWDa5ZG_cUxwl0vBsYXn8of-0/view?usp=sharing" class="contactBox" target="_blank">
-        <img src="/icons/resume.png" alt="Resume" />
-      </a>
-      <a href="https://www.linkedin.com/in/jack-b-smiley/" class="contactBox" target="_blank">
-        <img src="/icons/linkedin.png" alt="LinkedIn" />
-      </a>
-      <a href="https://github.com/SmileyJack" class="contactBox" target="_blank">
-        <img src="/icons/github.png" alt="GitHub" />
-      </a>
-      <a href="mailto:jackbsmiley@gmail.com?subject=&body=" class="contactBox">
-        <img src="/icons/email.png" alt="Email" />
-      </a>
-    </div>
-  </template>
-  
-  <script lang="ts">
-  import { defineComponent } from 'vue';
-  
-  export default defineComponent({
-    data() {
-      return {
-        screen: "computer"
-      }
-    },
-    methods: {
-      resize() {
-        this.screen = window.innerWidth > 700 ? "computer" : "phone";
-      },
-    },
-    mounted() {
-      this.resize();
-      window.addEventListener('resize', this.resize);
-    },
-  });
-  </script>
-  
-  <style scoped>
-  
-  .contactBox {
-    width: 4vw;
-    height: 4vw;
-    background: #A98CFF;
-    border-radius: 0.5vw;
-    margin-right: 0.5vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.2s ease;
+  <div class="contact-icons">
+    <a href="https://drive.google.com/file/d/1bHy2zqcYWDa5ZG_cUxwl0vBsYXn8of-0/view?usp=sharing" class="icon-btn" target="_blank" title="Resume">
+      <img src="/icons/resume.png" alt="Resume" />
+    </a>
+    <a href="https://www.linkedin.com/in/jack-b-smiley/" class="icon-btn" target="_blank" title="LinkedIn">
+      <img src="/icons/linkedin.png" alt="LinkedIn" />
+    </a>
+    <a href="https://github.com/SmileyJack" class="icon-btn" target="_blank" title="GitHub">
+      <img src="/icons/github.png" alt="GitHub" />
+    </a>
+    <a href="mailto:jackbsmiley@gmail.com" class="icon-btn" title="Email">
+      <img src="/icons/email.png" alt="Email" />
+    </a>
+  </div>
+</template>
 
-    &:hover {
-      transform: scale(1.1);
-      cursor: pointer;
-    }
+<script lang="ts">
+import { defineComponent } from 'vue';
+export default defineComponent({ name: 'ContactIcons' });
+</script>
 
-    img {
-    height: 70%;
-    }
+<style scoped>
+.contact-icons {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
 
-    .sm {
-        height: 2.65vw;
-    }
+.icon-btn {
+  width: 40px;
+  height: 40px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.15s, background 0.15s;
+}
 
-    .md {
-        height: 3.5vw;
-    }
+.icon-btn:hover {
+  border-color: var(--accent);
+  background: #1e2a3a;
+}
 
-    .lg {
-        height: 4vw;
-    }
-  }
+.icon-btn img {
+  height: 60%;
+  width: auto;
+  filter: brightness(0.85);
+}
 
-  .contactContainer {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-
-
-  
-  @media (max-width: 700px) {
-    .contactBox {
-      width: 9vw;
-      height: 9vw;
-      border-radius: 5px;
-      margin-right: 1vw;
-
-      &:hover {
-            transform: scale(1.1);
-            cursor: pointer;
-        }
-
-        .sm {
-            height: 5vw;
-        }
-
-        .md {
-            height: 6.5vw;
-        }
-
-        .lg {
-            height: 7.5vw;
-        }
-    }
-  }
-  </style>
-  
+.icon-btn:hover img {
+  filter: brightness(1);
+}
+</style>
