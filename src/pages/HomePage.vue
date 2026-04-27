@@ -6,12 +6,7 @@
           <GlitchText text="Jack " />
           <GlitchText text="Smiley." color="var(--accent)" />
         </h1>
-        <p class="tagline">Software engineer at the intersection of finance and code.</p>
-        <p class="bio">
-          I build software with a focus on correctness, infrastructure, and the unglamorous systems
-          that make everything else work. Currently studying at the University of Nebraska-Lincoln's
-          Raikes School.
-        </p>
+        <p class="tagline">Strange things are afoot at the Circle K</p>
         <ContactIcons />
       </div>
     </section>

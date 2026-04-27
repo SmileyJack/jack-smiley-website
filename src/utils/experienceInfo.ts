@@ -27,6 +27,7 @@ export const experienceInfo: ExperienceItem[] = [
         time: "May 2023 - Aug 2023 & May 2024 - Aug 2024",
         location: "Lincoln, NE",
         link: "https://www.hudl.com/",
+        skills: "TypeScript, C#, GraphQL, React",
     },
 
     {
@@ -36,6 +37,7 @@ export const experienceInfo: ExperienceItem[] = [
         time: "May 2022 - Aug 2022",
         location: "Omaha, NE",
         link: "https://www.scoular.com/",
+        skills: "SQL, Power BI, Excel",
     },
 
     {
@@ -45,5 +47,6 @@ export const experienceInfo: ExperienceItem[] = [
         time: "Aug 2023 - Dec 2023",
         location: "Lincoln, NE",
         link: "https://computing.unl.edu/",
+        skills: "Java, Software Engineering",
     }
 ]
