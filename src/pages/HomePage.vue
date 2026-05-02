@@ -8,10 +8,10 @@
         </h1>
         <ContactIcons />
       </div>
- 
+
       <div ref="sceneRef" class="scene">
         <canvas ref="canvasRef"></canvas>
- 
+
         <svg
           ref="rocketRef"
           class="rocket"
@@ -34,43 +34,43 @@
             <ellipse cx="12" cy="30" rx="1.5" ry="3" fill="#E5E5E5" opacity="0.7" />
           </g>
         </svg>
- 
+
         <div class="horizon-line" />
         <div class="launch-zone" @mouseenter="launch" @touchstart.passive="launch" />
       </div>
     </section>
   </div>
 </template>
- 
+
 <script lang="ts">
 import { defineComponent } from 'vue';
 import ContactIcons from '@/components/ContactIcons.vue';
 import { useRocketAnimation } from '@/composables/useRocketAnimation';
- 
+
 export default defineComponent({
   name: 'HomePage',
   components: { ContactIcons },
   setup() {
     const { sceneRef, canvasRef, rocketRef, flameRef, jackRef, launch } = useRocketAnimation();
- 
+
     return { sceneRef, canvasRef, rocketRef, flameRef, jackRef, launch };
   },
 });
 </script>
- 
+
 <style scoped>
 .page {
   padding-top: 56px;
   min-height: 100vh;
 }
- 
+
 .hero {
   max-width: 900px;
   margin: 0 auto;
   padding: 5rem 2rem 3rem;
   position: relative;
 }
- 
+
 .name {
   font-family: 'DM Serif Display', serif;
   font-size: clamp(2.5rem, 7vw, 5rem);
@@ -79,11 +79,11 @@ export default defineComponent({
   line-height: 1.1;
   letter-spacing: -0.02em;
 }
- 
+
 .accent {
   color: var(--accent);
 }
- 
+
 .scene {
   position: relative;
   width: 100%;
@@ -91,7 +91,7 @@ export default defineComponent({
   margin-top: 3rem;
   overflow: visible;
 }
- 
+
 .scene canvas {
   position: absolute;
   top: 0;
@@ -100,16 +100,16 @@ export default defineComponent({
   height: 100%;
   pointer-events: none;
 }
- 
+
 .rocket {
   position: absolute;
-  bottom: 7px;
+  bottom: -9px;
   left: 50%;
   transform: translateX(-50%);
   width: 22px;
   pointer-events: none;
 }
- 
+
 .horizon-line {
   position: absolute;
   bottom: 0;
@@ -118,7 +118,7 @@ export default defineComponent({
   height: 1px;
   background: var(--border);
 }
- 
+
 .launch-zone {
   position: absolute;
   bottom: 0;
@@ -129,4 +129,3 @@ export default defineComponent({
   cursor: pointer;
 }
 </style>
- 
