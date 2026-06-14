@@ -9,6 +9,8 @@
         <ContactIcons />
       </div>
 
+      <div class="hero-glow" />
+
       <div ref="sceneRef" class="scene">
         <canvas ref="canvasRef"></canvas>
 
@@ -69,6 +71,24 @@ export default defineComponent({
   margin: 0 auto;
   padding: 5rem 2rem 3rem;
   position: relative;
+  overflow: hidden;
+}
+
+.hero-glow {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 700px;
+  height: 500px;
+  background: radial-gradient(ellipse at 50% 85%, rgba(59, 130, 246, 0.13) 0%, rgba(59, 130, 246, 0.04) 40%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-text {
+  position: relative;
+  z-index: 1;
 }
 
 .name {
@@ -90,6 +110,20 @@ export default defineComponent({
   height: 180px;
   margin-top: 3rem;
   overflow: visible;
+  z-index: 1;
+}
+
+.scene::before {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 220px;
+  height: 120px;
+  background: radial-gradient(ellipse at 50% 100%, rgba(59, 130, 246, 0.28) 0%, rgba(59, 130, 246, 0.08) 50%, transparent 75%);
+  pointer-events: none;
+  z-index: 0;
 }
 
 .scene canvas {
