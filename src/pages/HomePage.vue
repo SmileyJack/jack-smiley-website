@@ -9,6 +9,9 @@
         </h1>
         <ContactIcons />
       </div>
+      <div class="hero-photo">
+        <img src="/headshot.png" alt="Jack Smiley" class="headshot" />
+      </div>
     </section>
   </div>
 
@@ -35,6 +38,10 @@ export default defineComponent({
   max-width: 900px;
   margin: 0 auto;
   padding: 5rem 2rem 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
 }
 
 .hero-glow {
@@ -50,6 +57,7 @@ export default defineComponent({
 .hero-content {
   position: relative;
   z-index: 1;
+  flex: 1;
 }
 
 .name {
@@ -63,5 +71,44 @@ export default defineComponent({
 
 .accent {
   color: var(--accent);
+}
+
+.hero-photo {
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+}
+
+.hero-photo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  translate: 10px 10px;
+  background: var(--accent);
+  border-radius: 14px;
+  opacity: 0.25;
+}
+
+.headshot {
+  position: relative;
+  display: block;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 12px;
+}
+
+@media (max-width: 600px) {
+  .hero {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+
+  .headshot {
+    width: 140px;
+    height: 140px;
+  }
 }
 </style>
