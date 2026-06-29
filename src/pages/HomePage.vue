@@ -82,10 +82,10 @@ export default defineComponent({
 .hero-photo::before {
   content: '';
   position: absolute;
-  inset: -10px -10px 10px 10px;
+  inset: 30px 30px -30px -30px;
   background: var(--accent);
   border-radius: 14px;
-  opacity: 0.2;
+  opacity: 0.45;
   z-index: 0;
 }
 
