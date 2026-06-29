@@ -38,7 +38,7 @@ export default defineComponent({
 }
 
 .hero-glow {
-  position: fixed;
+  position: absolute;
   inset: 0;
   background:
     radial-gradient(ellipse 50% 60% at 15% 55%, rgba(59, 130, 246, 0.1) 0%, transparent 70%),
