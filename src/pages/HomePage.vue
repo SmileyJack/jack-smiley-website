@@ -1,7 +1,7 @@
 <template>
   <div class="page">
+    <div class="hero-glow" />
     <section class="hero">
-      <div class="hero-glow" />
       <div class="hero-content">
         <h1 class="name">
           <span>Jack </span>
@@ -11,6 +11,7 @@
       </div>
     </section>
   </div>
+
 </template>
 
 <script lang="ts">
@@ -27,25 +28,21 @@ export default defineComponent({
 .page {
   padding-top: 56px;
   min-height: 100vh;
+  position: relative;
 }
 
 .hero {
   max-width: 900px;
   margin: 0 auto;
   padding: 5rem 2rem 3rem;
-  position: relative;
-  overflow: hidden;
 }
 
 .hero-glow {
-  position: absolute;
-  top: 0;
-  left: -10%;
-  width: 120%;
-  height: 100%;
+  position: fixed;
+  inset: 0;
   background:
-    radial-gradient(ellipse 60% 50% at 20% 60%, rgba(59, 130, 246, 0.12) 0%, transparent 70%),
-    radial-gradient(ellipse 40% 40% at 75% 30%, rgba(139, 92, 246, 0.08) 0%, transparent 65%);
+    radial-gradient(ellipse 50% 60% at 15% 55%, rgba(59, 130, 246, 0.1) 0%, transparent 70%),
+    radial-gradient(ellipse 35% 45% at 80% 25%, rgba(139, 92, 246, 0.07) 0%, transparent 65%);
   pointer-events: none;
   z-index: 0;
 }
