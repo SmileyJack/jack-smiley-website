@@ -82,18 +82,19 @@ export default defineComponent({
 .hero-photo::before {
   content: '';
   position: absolute;
-  inset: 0;
-  translate: 10px 10px;
+  inset: -10px -10px 10px 10px;
   background: var(--accent);
   border-radius: 14px;
-  opacity: 0.25;
+  opacity: 0.2;
+  z-index: 0;
 }
 
 .headshot {
   position: relative;
+  z-index: 1;
   display: block;
-  width: 200px;
-  height: 200px;
+  width: 280px;
+  height: 320px;
   object-fit: cover;
   object-position: top;
   border-radius: 12px;
@@ -107,8 +108,8 @@ export default defineComponent({
   }
 
   .headshot {
-    width: 140px;
-    height: 140px;
+    width: 180px;
+    height: 210px;
   }
 }
 </style>
