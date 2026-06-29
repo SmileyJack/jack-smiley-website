@@ -7,6 +7,7 @@
           <span>Jack </span>
           <span class="accent">Smiley.</span>
         </h1>
+        <p class="tagline">Hello! My handwriting is sub-par so I made a website.</p>
         <ContactIcons />
       </div>
       <div class="hero-photo">
@@ -32,12 +33,13 @@ export default defineComponent({
   padding-top: 56px;
   min-height: 100vh;
   position: relative;
+  overflow-x: clip;
 }
 
 .hero {
-  max-width: 900px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 5rem 2rem 3rem;
+  padding: 5rem 3rem 3rem 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -73,6 +75,13 @@ export default defineComponent({
   color: var(--accent);
 }
 
+.tagline {
+  font-size: 1rem;
+  color: var(--muted);
+  margin: 0 0 1.5rem;
+  line-height: 1.6;
+}
+
 .hero-photo {
   position: relative;
   z-index: 1;
@@ -82,7 +91,7 @@ export default defineComponent({
 .hero-photo::before {
   content: '';
   position: absolute;
-  inset: 30px 30px -30px -30px;
+  inset: -30px -30px 0px -35px;
   background: var(--accent);
   border-radius: 14px;
   opacity: 0.45;
@@ -93,14 +102,14 @@ export default defineComponent({
   position: relative;
   z-index: 1;
   display: block;
-  width: 280px;
-  height: 320px;
+  width: 320px;
+  height: 370px;
   object-fit: cover;
   object-position: top;
   border-radius: 12px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 750px) {
   .hero {
     flex-direction: column-reverse;
     align-items: flex-start;
